@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 
 namespace Csharp01
 {
@@ -30,6 +31,48 @@ namespace Csharp01
 
         static void Main(string[] args)
         {
+            //exemplo de coleção ou fila
+            Queue fila = new Queue();
+
+            //enfileirar
+            fila.Enqueue("Maria");
+            fila.Enqueue("Junior");
+            fila.Enqueue("Ana");
+            fila.Enqueue("Mario");
+
+            while (fila.Count > 0) {
+                var nome = fila.Dequeue();
+               // var nome1 = fila.Peek();
+                Console.WriteLine(nome);
+            }
+
+            //EXEMPLO DE PILHA - PRIMEIRO QUE ENTRA PRIMEIRO QUE SAI
+            Stack pilha = new Stack();
+            pilha.Push("Prato 01");
+            pilha.Push("Prato 02");
+            pilha.Push("Prato 03");
+            pilha.Push("Prato 04");
+            pilha.Push("Prato 05");
+            while (pilha.Count > 0) {
+                var prato = pilha.Pop();
+                Console.WriteLine("Pilhas: "+prato);
+            }
+
+            //EXEMPLO DE LISTA ARRAY
+            ArrayList listaArr = new ArrayList();
+
+            listaArr.Insert(0, "Imtem 01");
+            listaArr.Insert(1, "Imtem 02");
+            listaArr.Insert(2, "Imtem 03");
+
+            listaArr.Insert(2, "INTRUSO");
+
+            for (int i =0; i < listaArr.Count; i++) {
+                var item = listaArr[i];
+                Console.WriteLine(item);
+            }
+
+            /*
             Pessoa p = new Pessoa();
             p.Nome = "Roberto";
             p.Sobrenome = "Soares";
@@ -41,7 +84,7 @@ namespace Csharp01
                 );
 
             Console.WriteLine(pessoa);
-
+            */
             /*
             //ecutando metodo simples
             //mas que so poderá ser do tipo static
